@@ -1,0 +1,50 @@
+## nmcli connect to wifi manual ##
+
+
+# check status of network cards
+nmcli dev status
+
+
+## see if wifi device is enabled or not
+nmcli radio wifi
+	#wifi is disabled?
+		#enable with wifi with
+			nmcli radio wifi on
+	#else
+		#do nothing
+
+
+## Get list of wifi access points around you
+nmcli dev wifi list
+#remember SSID of wifi-ap you want to connect to
+
+
+## CONNECT
+
+# connect to OPEN wifi network
+sudo nmcli dev wifi connect <SSID>
+
+# connect to SAVED wifi network
+nmcli con up <ssid> or <uuid>
+
+#connect to PROTECTED and UNKNOWN wifi network (scripty)
+sudo nmcli dev wifi connect <SSID> password <password>
+
+#connect to PROTECTED and UNKNOWN wifi network (prompt for password)
+sudo nmcli --ask dev wifi connect <SSID>
+
+
+## list of saved connections
+nmcli con show
+
+
+# Disconnect
+nmcli con down <ssid> or <uuid> 
+
+
+
+#################### Created by Arne Gerets #####################################
+#################### No license, Do whatever you want with it ###################
+
+
+
