@@ -8,7 +8,7 @@ nmcli dev status
 ## see if wifi device is enabled or not
 nmcli radio wifi
 	#wifi is disabled?
-		#enable with wifi with
+		#enable wifi with:
 			nmcli radio wifi on
 	#else
 		#do nothing
